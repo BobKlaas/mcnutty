@@ -108,12 +108,12 @@ function setDomResult(stats){
 
 //Add or Remove CSS class from DOM Element
 function addRemoveClass(elementID,action,className){
-    //[IF] Add passed in className to DOM element
+    //[IF] action==='add', add className to DOM element
     if(action==='add'){
         document.getElementById(elementID).classList.add(className);
     }
 
-    //[IF] Remove passed in className to DOM element
+    //[IF] action==='remove', remove className from DOM element
     if(action==='remove'){
         document.getElementById(elementID).classList.remove(className);
     }    
