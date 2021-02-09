@@ -7,7 +7,7 @@ function formSubmit(){
   var shiftNumber = document.getElementById('inputShifter').value;
 
   //Set Phrase to Local Variable
-  var phrase = document.getElementById('txtPhrase').value;
+  var phrase = document.getElementById('txtPhrase').value.toUpperCase();
   
   //Get modulus (remainder) of user inputed shift number
   shiftNumber = shiftNumber % 26;
@@ -73,7 +73,7 @@ function displayShiftedAlphabet(shiftedAlphabet,shiftNumber){
 //Encode phrase with shiftedAlphabet
 function encodePhrase(phrase,shiftedAlphabet){
   var encodedPhrase = '';
-
+  
   //Loop Over Phrase and Encode Each Letter
   for(var i=0; i<phrase.length; i++){
 
@@ -81,7 +81,7 @@ function encodePhrase(phrase,shiftedAlphabet){
     var l = phrase.substring(i,i+1);
     
     //[IF] Character is not a space, encode it [ELSE] Character is a space, add a space
-    if(l!==''){
+    if(l!==' '){
       //Find position of letter in alphabet
       var position = alphabet.indexOf(l);
 
@@ -89,7 +89,7 @@ function encodePhrase(phrase,shiftedAlphabet){
       encodedPhrase = encodedPhrase + shiftedAlphabet[position];    
     }else{
       //Character is a space, add a space - No encode necessary
-      encodedPhrase = encodedPhrase + '';    
+      encodedPhrase = encodedPhrase + ' ';    
     }
   }
   
